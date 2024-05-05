@@ -16,6 +16,14 @@
         </option>
       </GradleProjectSettings>
       <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring_boot/api" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/spring_boot/api" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/spring_boot/product-composite-service" />
         <option name="modules">
           <set>
@@ -44,6 +52,14 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/spring_boot/review-service" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/spring_boot/util" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/spring_boot/util" />
           </set>
         </option>
       </GradleProjectSettings>
