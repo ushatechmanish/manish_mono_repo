@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/html.iml" filepath="$PROJECT_DIR$/html.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/manish_mono_repo.iml" filepath="$PROJECT_DIR$/.idea/manish_mono_repo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/react.iml" filepath="$PROJECT_DIR$/react.iml" />
     </modules>
   </component>
 </project>

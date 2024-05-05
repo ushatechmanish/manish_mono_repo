@@ -5,10 +5,13 @@
   <groupId>in.ushatech</groupId>
   <artifactId>java</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
 
   <name>java</name>
   <url>http://maven.apache.org</url>
+  <modules>
+    <module>dsa</module>
+  </modules>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
