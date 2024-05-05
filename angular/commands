@@ -1,0 +1,4 @@
+To create a component
+ ng generate component home --inline-template --skip-tests
+
+ng serve to start the application .
