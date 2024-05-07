@@ -10,6 +10,6 @@ public class WelcomeController
     @RequestMapping(method = RequestMethod.GET,value = "/hello")
     public String getWelocomeMessage()
     {
-        return "Welcome to unsecured spring boot application";
+        return "Welcome to secured spring boot application";
     }
 }
