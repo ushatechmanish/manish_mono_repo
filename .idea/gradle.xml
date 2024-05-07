@@ -12,6 +12,12 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/spring_boot" />
+            <option value="$PROJECT_DIR$/spring_boot/api" />
+            <option value="$PROJECT_DIR$/spring_boot/product-composite-service" />
+            <option value="$PROJECT_DIR$/spring_boot/product-service" />
+            <option value="$PROJECT_DIR$/spring_boot/recommendation-service" />
+            <option value="$PROJECT_DIR$/spring_boot/review-service" />
+            <option value="$PROJECT_DIR$/spring_boot/util" />
           </set>
         </option>
       </GradleProjectSettings>
