@@ -9,6 +9,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/spring_boot" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../gradle" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/spring_boot" />
@@ -23,6 +24,8 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/spring_boot/api" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../gradle" />
+        <option name="gradleJvm" value="17" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/spring_boot/api" />
@@ -31,6 +34,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/spring_boot/product-composite-service" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../gradle" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/spring_boot/product-composite-service" />
@@ -39,6 +43,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/spring_boot/product-service" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../gradle" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/spring_boot/product-service" />
@@ -47,6 +52,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/spring_boot/recommendation-service" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../gradle" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/spring_boot/recommendation-service" />
@@ -55,6 +61,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/spring_boot/review-service" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../gradle" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/spring_boot/review-service" />
@@ -63,6 +70,7 @@
       </GradleProjectSettings>
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/spring_boot/util" />
+        <option name="gradleHome" value="$PROJECT_DIR$/../../gradle" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/spring_boot/util" />
