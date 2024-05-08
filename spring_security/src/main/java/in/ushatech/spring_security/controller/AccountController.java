@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class WelcomeController
+public class AccountController
 {
-    @RequestMapping(method = RequestMethod.GET,value = "/hello")
-    public String getWelocomeMessage()
+    @RequestMapping(method = RequestMethod.GET,value = "/myAccount")
+    public String getAccountDetails()
     {
-        return "Welcome to secured spring boot application with static credentials";
+        return "Account Details from the DB";
     }
 }
