@@ -6,6 +6,10 @@
       <module fileurl="file://$PROJECT_DIR$/html.iml" filepath="$PROJECT_DIR$/html.iml" />
       <module fileurl="file://$PROJECT_DIR$/learn_react.iml" filepath="$PROJECT_DIR$/learn_react.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/manish_mono_repo.iml" filepath="$PROJECT_DIR$/.idea/manish_mono_repo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/product-composite-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/product-composite-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/product-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/product-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/recommendation-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/recommendation-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/review-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/review-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_security/spring_security.iml" filepath="$PROJECT_DIR$/spring_security/spring_security.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_boot/util/util.iml" filepath="$PROJECT_DIR$/spring_boot/util/util.iml" />
     </modules>
