@@ -35,7 +35,7 @@ public class CustomerUserDetailsManagerService implements UserDetailsService
     {
         List<Customer> users = customerRepository.findByEmail(username);
         if (users.isEmpty()) {
-            logger.debug("Query returned no results for user '" + username + "'");
+            logger.debug("Query returned no results for user ({})" , username);
             throw new UsernameNotFoundException("User not found");
         }
         Customer user = users.get(0); // contains no GrantedAuthority[]
