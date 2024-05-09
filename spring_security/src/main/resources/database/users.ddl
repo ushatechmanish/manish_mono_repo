@@ -1,5 +1,3 @@
-DROP DATABASE spring_security;
-
 CREATE DATABASE IF NOT EXISTS spring_security;
 
 USE spring_security;
