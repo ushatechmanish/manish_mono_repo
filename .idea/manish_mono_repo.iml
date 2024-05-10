@@ -2,7 +2,16 @@
 <module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/.idea/dataSources" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/httpRequests" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/inspectionProfiles" />
+      <excludeFolder url="file://$MODULE_DIR$/.idea/modules" />
+      <excludeFolder url="file://$MODULE_DIR$/jakaratee_web/target/generated-sources" />
+      <excludeFolder url="file://$MODULE_DIR$/jakaratee_web/target/generated-test-sources" />
+      <excludeFolder url="file://$MODULE_DIR$/jakaratee_web/target/jakaratee_web-1.0-SNAPSHOT/META-INF" />
+      <excludeFolder url="file://$MODULE_DIR$/jakaratee_web/target/test-classes" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
