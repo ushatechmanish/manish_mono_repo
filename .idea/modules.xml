@@ -10,6 +10,10 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/product-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/product-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/recommendation-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/recommendation-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/review-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/review-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/product-composite-service/spring_boot.product-composite-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/product-composite-service/spring_boot.product-composite-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/product-service/spring_boot.product-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/product-service/spring_boot.product-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/recommendation-service/spring_boot.recommendation-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/recommendation-service/spring_boot.recommendation-service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/review-service/spring_boot.review-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/review-service/spring_boot.review-service.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_security/spring_security.iml" filepath="$PROJECT_DIR$/spring_security/spring_security.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_boot/util/util.iml" filepath="$PROJECT_DIR$/spring_boot/util/util.iml" />
     </modules>
