@@ -11,6 +11,7 @@
   <url>http://maven.apache.org</url>
   <modules>
     <module>dsa</module>
+    <module>designpatterns</module>
   </modules>
 
   <properties>
