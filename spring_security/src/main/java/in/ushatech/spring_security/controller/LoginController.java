@@ -4,6 +4,7 @@ import in.ushatech.spring_security.entity.Customer;
 import in.ushatech.spring_security.repository.CustomerRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,14 +14,19 @@ public class LoginController
 {
     private final CustomerRepository customerRepository;
 
-    public LoginController(CustomerRepository customerRepository)
+    PasswordEncoder passwordEncoder;
+
+    public LoginController(CustomerRepository customerRepository, PasswordEncoder passwordEncoder)
     {
         this.customerRepository = customerRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody Customer customer)
     {
+        String hashPwd = passwordEncoder.encode(customer.getPwd());
+        customer.setPwd(hashPwd);
         ResponseEntity<String> response = null;
         Customer customer1;
         try
