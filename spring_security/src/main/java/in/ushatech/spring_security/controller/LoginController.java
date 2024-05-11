@@ -17,20 +17,20 @@ public class LoginController
     {
         this.customerRepository = customerRepository;
     }
-    @PostMapping
+
+    @PostMapping("/register")
     public ResponseEntity<String> register(@RequestBody Customer customer)
     {
-        ResponseEntity<String> response=null;
-        Customer customer1 ;
+        ResponseEntity<String> response = null;
+        Customer customer1;
         try
         {
-            customer1= customerRepository.save(customer);
-            if(customer1.getId()>0)
+            customer1 = customerRepository.save(customer);
+            if (customer1.getId() > 0)
             {
-                response= ResponseEntity.status(HttpStatus.CREATED).body("User created successfully");
+                response = ResponseEntity.status(HttpStatus.CREATED).body("User created successfully");
             }
-        }
-        catch (Exception e)
+        } catch (Exception e)
         {
             response = ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Something went wrong at server");
         }
