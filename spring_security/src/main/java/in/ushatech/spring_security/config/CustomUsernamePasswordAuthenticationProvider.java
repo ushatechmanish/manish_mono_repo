@@ -1,5 +1,6 @@
 package in.ushatech.spring_security.config;
 
+import in.ushatech.spring_security.entity.Authority;
 import in.ushatech.spring_security.entity.Customer;
 import in.ushatech.spring_security.repository.CustomerRepository;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -12,8 +13,10 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 @Component
 public class CustomUsernamePasswordAuthenticationProvider implements AuthenticationProvider
@@ -50,15 +53,22 @@ public class CustomUsernamePasswordAuthenticationProvider implements Authenticat
 
         if (passwordMatches)
         {
-            // Using singletonList for immutable authorities
-            List<GrantedAuthority> authorities = Collections.singletonList(new SimpleGrantedAuthority(customer.getRole()));
-            return new UsernamePasswordAuthenticationToken(username, rawPassword, authorities);
+            return new UsernamePasswordAuthenticationToken(username, rawPassword, getAuthorities(customer.getAuthorities()));
         } else
         {
             throw new BadCredentialsException("Invalid username or password ");
         }
     }
 
+    List<GrantedAuthority> getAuthorities(Set<Authority> authorities)
+    {
+        List<GrantedAuthority> grantedAuthorities = new ArrayList<>();
+        for (Authority grantedAuthority : authorities)
+        {
+            grantedAuthorities.add(new SimpleGrantedAuthority(grantedAuthority.getName()));
+        }
+        return Collections.unmodifiableList(grantedAuthorities);
+    }
 
     @Override
     public boolean supports(Class<?> authentication)
