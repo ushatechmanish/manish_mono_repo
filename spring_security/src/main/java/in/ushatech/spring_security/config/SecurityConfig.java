@@ -1,6 +1,7 @@
 package in.ushatech.spring_security.config;
 
-import in.ushatech.spring_security.filter.CSRFCookieFilter;
+
+import in.ushatech.spring_security.filter.CsrfCookieFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
@@ -45,7 +46,7 @@ public class SecurityConfig
                 .csrf((csrf) -> csrf.csrfTokenRequestHandler(requestAttributeHandler)
                         .ignoringRequestMatchers("/contact", "/register")
                         .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
-                .addFilterAfter(new CSRFCookieFilter(), BasicAuthenticationFilter.class)
+                .addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
                 .authorizeHttpRequests((requests) -> requests
                         .requestMatchers("/myAccount", "/myBalance", "/myLoans", "/myCards").authenticated()
                         .requestMatchers("/notices", "/contact", "/register", "/user").permitAll())
