@@ -3,63 +3,36 @@ package in.ushatech.spring_security.entity;
 import jakarta.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.time.LocalDate;
+
+@lombok.Getter
+@lombok.Setter
 @Entity
-@Table(name = "customers")
+@Table(name = "customer", schema = "eazybank")
 public class Customer
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
-    @Column(name = "id", nullable = false)
+    @Column(name = "customer_id", nullable = false)
     private Integer id;
 
-    @Column(name = "email", nullable = false, length = 50)
+    @Column(name = "name", nullable = false, length = 100)
+    private String name;
+
+    @Column(name = "email", nullable = false, length = 100)
     private String email;
+
+    @Column(name = "mobile_number", nullable = false, length = 20)
+    private String mobileNumber;
 
     @Column(name = "pwd", nullable = false, length = 500)
     private String pwd;
 
-    @Column(name = "role", nullable = false, length = 500)
+    @Column(name = "role", nullable = false, length = 100)
     private String role;
 
-    public Integer getId()
-    {
-        return id;
-    }
-
-    public void setId(Integer id)
-    {
-        this.id = id;
-    }
-
-    public String getEmail()
-    {
-        return email;
-    }
-
-    public void setEmail(String email)
-    {
-        this.email = email;
-    }
-
-    public String getPwd()
-    {
-        return pwd;
-    }
-
-    public void setPwd(String pwd)
-    {
-        this.pwd = pwd;
-    }
-
-    public String getRole()
-    {
-        return role;
-    }
-
-    public void setRole(String role)
-    {
-        this.role = role;
-    }
+    @Column(name = "create_dt")
+    private LocalDate createDt;
 
 }

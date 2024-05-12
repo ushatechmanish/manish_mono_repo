@@ -1,15 +1,26 @@
 package in.ushatech.spring_security.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import in.ushatech.spring_security.entity.Card;
+import in.ushatech.spring_security.repository.CardRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+
 
 @RestController
 public class CardsController
 {
-    @RequestMapping(method = RequestMethod.GET,value = "/myCards")
-    public String getCardsDetails()
+
+    @Autowired
+    private CardRepository cardsRepository;
+
+    @GetMapping("/myCards")
+    public List<Card> getCardDetails(@RequestParam int id)
     {
-        return "Cards Details from the DB";
+        return cardsRepository.findByCustomerId(id);
     }
+
 }

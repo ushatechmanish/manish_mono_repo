@@ -1,6 +1,6 @@
 package in.ushatech.spring_security.repository;
 
-import in.ushatech.spring_security.entity.Customer;
+import in.ushatech.spring_security.entity.AccountTransaction;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 @Component
-public interface CustomerRepository extends CrudRepository<Customer, Integer>
+public interface AccountTransactionRepository extends CrudRepository<AccountTransaction, Integer>
 {
-    List<Customer> findByEmail(String username);
+    List<AccountTransaction> findByCustomerIdOrderByTransactionDtDesc(int id);
 }

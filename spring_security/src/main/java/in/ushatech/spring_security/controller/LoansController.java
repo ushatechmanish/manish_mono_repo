@@ -1,15 +1,26 @@
 package in.ushatech.spring_security.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+
+import in.ushatech.spring_security.entity.Loan;
+import in.ushatech.spring_security.repository.LoanRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class LoansController
 {
-    @RequestMapping(method = RequestMethod.GET,value = "/myLoans")
-    public String getLoansDetails()
+
+    @Autowired
+    private LoanRepository loanRepository;
+
+    @GetMapping("/myLoans")
+    public List<Loan> getLoanDetails(@RequestParam int id)
     {
-        return "Loans Details from the DB";
+        return loanRepository.findByCustomerIdOrderByStartDtDesc(id);
     }
+
 }
