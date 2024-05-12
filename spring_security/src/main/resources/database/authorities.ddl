@@ -22,3 +22,11 @@ VALUES (1, 'VIEWLOANS');
 
 INSERT INTO `authorities` (`customer_id`, `name`)
 VALUES (1, 'VIEWBALANCE');
+
+DELETE
+from authorities;
+
+INSERT INTO `authorities` (`customer_id`, `name`)
+VALUES (1, 'ROLE_ADMIN');
+INSERT INTO `authorities` (`customer_id`, `name`)
+VALUES (1, 'ROLE_USER');
