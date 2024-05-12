@@ -14,9 +14,9 @@ public class Accounts
 {
     @Id
     @Column(name = "account_number", nullable = false)
-    private Integer id;
+    private Integer accountNumber;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
