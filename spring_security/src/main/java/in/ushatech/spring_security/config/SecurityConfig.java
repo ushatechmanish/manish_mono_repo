@@ -44,12 +44,12 @@ public class SecurityConfig
                     return config;
                 }))
                 .csrf((csrf) -> csrf.csrfTokenRequestHandler(requestAttributeHandler)
-                        .ignoringRequestMatchers("/contact", "/register")
+                        .ignoringRequestMatchers("/register")
                         .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
                 .addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
                 .authorizeHttpRequests((requests) -> requests
-                        .requestMatchers("/myAccount", "/myBalance", "/myLoans", "/myCards").authenticated()
-                        .requestMatchers("/notices", "/contact", "/register", "/user").permitAll())
+                        .requestMatchers("/myAccount", "/myBalance", "/myLoans", "/contact", "/myCards").authenticated()
+                        .requestMatchers("/notices", "/register", "/user").permitAll())
                 .formLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults());
         return http.build();
