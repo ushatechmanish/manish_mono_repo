@@ -19,7 +19,7 @@ ext {
 }
 
 dependencies {
-    implementation platform('org.springframework.boot:spring-boot-dependencies:${springBootVersion}')
+    implementation platform("org.springframework.boot:spring-boot-dependencies:${springBootVersion}")
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
