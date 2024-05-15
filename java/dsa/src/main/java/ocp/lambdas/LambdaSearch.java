@@ -3,7 +3,7 @@ package ocp.lambdas;
 import java.util.Arrays;
 import java.util.List;
 
-public class TraditionalSearch
+public class LambdaSearch
 {
     public static void main(String[] args)
     {
@@ -13,14 +13,14 @@ public class TraditionalSearch
           new Animal("rabbit",true,false),
           new Animal("turtle",false,true)
         );
-        print(animals,new CheckIfHopper());
+        print(animals,(animal)-> animal.canHop());
     }
 
-    private static void print(List<Animal> animals, CheckTrait checkIfHopper)
+    private static void print(List<Animal> animals, CheckTrait checkTrait)
     {
         for (var animal : animals)
         {
-            if(checkIfHopper.test(animal))
+            if(checkTrait.test(animal))
             {
                 System.out.println(animal);
             }
