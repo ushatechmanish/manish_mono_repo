@@ -11,7 +11,7 @@ create_project() {
   --java-version=21 \
   --packaging=jar \
   --name="$project_name" \
-  --package-name="com.example.$project_name" \
+  --package-name="in.ushatech.$project_name" \
   --groupId=in.ushatech \
   --dependencies=web,webflux,actuator,lombok \
   --version=0.0.1-SNAPSHOT \
