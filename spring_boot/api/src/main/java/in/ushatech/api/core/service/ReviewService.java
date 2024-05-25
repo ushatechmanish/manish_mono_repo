@@ -1,6 +1,6 @@
 package in.ushatech.api.core.service;
 
-import in.ushatech.api.model.Review;
+import in.ushatech.api.core.model.Review;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
