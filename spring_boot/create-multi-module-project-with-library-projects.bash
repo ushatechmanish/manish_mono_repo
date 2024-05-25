@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Default values
-default_root_folder="sample-multi-module-project"
+default_root_folder="sample"
 default_library_project_names=("api" "util")
 default_microservice_project_names=("product-composite-service" "product-service" "recommendation-service" "review-service")
 default_microservice_project_descriptions=("product-composite-service" "product-service" "recommendation-service" "review-service")
@@ -23,10 +23,10 @@ create_library_project() {
   --version=0.0.1-SNAPSHOT \
   --description="$project_description" \
   "$project_name"
-  
+
 
   echo "trying to delete Application.java"
-  
+
   # Remove unnecessary files and folders
   rm -f "$project_name/src/main/java/in/ushatech/$project_name/"*.java
   rm -rf "$project_name/src/main/resources"
@@ -41,8 +41,8 @@ create_library_project() {
   # Create new build.gradle file
   cat > "$project_name/build.gradle" <<EOL
 plugins {
-    id 'java'
     id 'io.spring.dependency-management' version '1.1.5'
+    id 'java'
 }
 
 group = 'in.ushatech'
@@ -50,12 +50,6 @@ version = '0.0.1-SNAPSHOT'
 
 java {
     sourceCompatibility = '21'
-}
-
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
 }
 
 repositories {
@@ -67,9 +61,9 @@ ext {
 }
 
 dependencies {
-    compileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
-    implementation platform("org.springframework.boot:spring-boot-dependencies:\${springBootVersion}")
+    	implementation platform("org.springframework.boot:spring-boot-dependencies:\${springBootVersion}")
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {
