@@ -9,5 +9,5 @@ import java.util.List;
 public interface RecommendationService
 {
     @GetMapping(value = "/recommendation", produces = "application/json")
-    List<Recommendation> getProduct(@RequestParam(name = "productId", required = true) int productId);
+    List<Recommendation> getRecommendation(@RequestParam(name = "productId", required = true) int productId);
 }

@@ -9,22 +9,25 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 @Component
-public class ServiceUtil
-{
-  private static final Logger logger = LoggerFactory.getLogger(ServiceUtil.class);
-  @Value("7000")
-  String port ;
-  String serviceAddress;
+public class ServiceUtil {
 
-  public String getServiceAddress()
-  {
-    if(serviceAddress==null)
-    {
-      serviceAddress= findMyHostname()+"/"+findMyIpAddress()+":"+port;
+  private static final Logger logger = LoggerFactory.getLogger(ServiceUtil.class);
+  private final String port;
+
+
+
+  public ServiceUtil(@Value("${server.port}") String port) {
+    this.port = port;
+  }
+
+  private String serviceAddress =null;
+
+  public String getServiceAddress() {
+    if (serviceAddress == null) {
+      serviceAddress = findMyHostname() + "/" + findMyIpAddress() + ":" + port;
     }
     return serviceAddress;
   }
-
 
   private String findMyHostname() {
     try {
