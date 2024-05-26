@@ -13,7 +13,7 @@ create_project() {
   --name="$project_name" \
   --package-name="in.ushatech.$project_name" \
   --groupId=in.ushatech \
-  --dependencies=web,webflux,actuator,lombok \
+  --dependencies=webflux,actuator,lombok \
   --version=0.0.1-SNAPSHOT \
   --description="$project_description" \
   "$project_name"
