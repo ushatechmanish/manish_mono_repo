@@ -12,31 +12,40 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import static org.springframework.http.HttpStatus.NOT_FOUND;
+import static org.springframework.http.HttpStatus.UNPROCESSABLE_ENTITY;
 
 @RestControllerAdvice
-public class GlobalExceptionHandler
+class GlobalControllerExceptionHandler
 {
-    private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
+
+    private static final Logger LOG = LoggerFactory.getLogger(GlobalControllerExceptionHandler.class);
 
     @ResponseStatus(NOT_FOUND)
     @ExceptionHandler(NotFoundException.class)
-    public @ResponseBody HttpErrorInfo handleNotFoundException(ServerHttpRequest request,NotFoundException notFoundException)
+    public @ResponseBody HttpErrorInfo handleNotFoundExceptions(
+            ServerHttpRequest request, NotFoundException ex)
     {
-        return createHttpErrorInfo(NOT_FOUND, request,notFoundException);
+
+        return createHttpErrorInfo(NOT_FOUND, request, ex);
     }
 
-    public HttpErrorInfo handleInvalidInputException(ServerHttpRequest request, InvalidInputException invalidInputException)
+    @ResponseStatus(UNPROCESSABLE_ENTITY)
+    @ExceptionHandler(InvalidInputException.class)
+    public @ResponseBody HttpErrorInfo handleInvalidInputException(
+            ServerHttpRequest request, InvalidInputException ex)
     {
-        return createHttpErrorInfo(HttpStatus.UNPROCESSABLE_ENTITY,request,invalidInputException);
+
+        return createHttpErrorInfo(UNPROCESSABLE_ENTITY, request, ex);
     }
 
-
-    private HttpErrorInfo createHttpErrorInfo(HttpStatus httpStatus, ServerHttpRequest request,
-                                              Exception exception)
+    private HttpErrorInfo createHttpErrorInfo(
+            HttpStatus httpStatus, ServerHttpRequest request, Exception ex)
     {
-        String path = request.getPath().pathWithinApplication().value();
-        log.info(httpStatus+", "+path+" , "+exception.getMessage());
-        return new HttpErrorInfo(httpStatus,path, exception.getMessage());
-    }
 
+        final String path = request.getPath().pathWithinApplication().value();
+        final String message = ex.getMessage();
+
+        LOG.debug("Returning HTTP status: {} for path: {}, message: {}", httpStatus, path, message);
+        return new HttpErrorInfo(httpStatus, path, message);
+    }
 }

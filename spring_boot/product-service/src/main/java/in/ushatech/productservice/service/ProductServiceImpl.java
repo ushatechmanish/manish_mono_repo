@@ -1,5 +1,7 @@
 package in.ushatech.productservice.service;
 
+import in.ushatech.api.core.exception.InvalidInputException;
+import in.ushatech.api.core.exception.NotFoundException;
 import in.ushatech.api.core.model.Product;
 import in.ushatech.api.core.service.ProductService;
 import in.ushatech.util.ServiceUtil;
@@ -18,6 +20,14 @@ public class ProductServiceImpl implements ProductService
     @Override
     public Product getProduct(int productId)
     {
-        return new Product(productId,"name-"+productId,123, serviceUtil.getServiceAddress());
+        if (productId < 1)
+        {
+            throw new InvalidInputException(String.format("Invalid ProductId:%s", productId));
+        }
+        if (productId == 13)
+        {
+            throw new NotFoundException(String.format("Not found prouduct with ProductId:%s", productId));
+        }
+        return new Product(productId, "name-" + productId, 123, serviceUtil.getServiceAddress());
     }
 }

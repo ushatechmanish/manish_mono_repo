@@ -2,7 +2,6 @@ package in.ushatech.reviewservice.service;
 
 import in.ushatech.api.core.model.Review;
 import in.ushatech.api.core.service.ReviewService;
-
 import in.ushatech.util.ServiceUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -26,8 +25,8 @@ public class ReviewServiceImpl implements ReviewService
     @Override
     public List<Review> getReviews(int productId)
     {
-        log.info("productId:"+productId);
-        return List.of(new Review(productId,productId,"author-"+productId,"subject-"+productId,
-                "content-"+productId,serviceUtil.getServiceAddress()));
+        log.info("productId: {}", productId);
+        return List.of(new Review(productId, productId, "author-" + productId, "subject-" + productId,
+                "content-" + productId, serviceUtil.getServiceAddress()));
     }
 }
